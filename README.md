@@ -343,37 +343,6 @@ docker-compose up -d
 2. In-memory queue (events lost on crash)
 3. No built-in clustering
 
-**Future Improvement:**
-- [ ] PostgreSQL backend for HA
-- [ ] Persistent message queue (Kafka/RabbitMQ)
-- [ ] Bloom filter for faster approx. lookup
-- [ ] Multi-node clustering
-- [ ] Metrics export (Prometheus)
-
-### Laporan & Dokumentasi
-
-**docs/REPORT.md** contains:
-
-**Teori (40%):** 8 pertanyaan mendasar Bab 1-7 Van Steen & Tanenbaum (2023)
-- T1: Karakteristik sistem terdistribusi dan trade-off
-- T2: Perbandingan arsitektur client-server vs pub-sub
-- T3: At-least-once vs exactly-once; idempotent consumer
-- T4: Skema penamaan topic dan event_id
-- T5: Ordering - kapan tidak perlu total ordering
-- T6: Failure modes dan strategi mitigasi
-- T7: Eventual consistency melalui idempotency
-- T8: Metrik evaluasi sistem
-
-**Implementasi (60%):**
-- Arsitektur sistem (diagram)
-- Keputusan desain kritis
-- Strategi idempotency
-- Performa & skalabilitas
-- Unit tests coverage
-- Docker deployment
-
-**docs/DESIGN.md** contains detailed system design.
-**docs/DEMO_SCRIPT.md** contains the verbatim narration for the YouTube demo video.
 
 ### Referensi
 
@@ -408,16 +377,8 @@ pytest tests/ -v --tb=short
 docker run --rm uts-aggregator python -m pytest tests/ -v
 ```
 
-### Sitasi Format APA Edisi 7
+### Referensi
 
 Van Steen, M., & Tanenbaum, A. S. (2023). *Distributed systems* (4th ed.). Maarten van Steen. https://www.distributed-systems.net/
 
 ---
-
-**Status:** ✅ PRODUCTION READY  
-**Tests:** 35/35 PASSING  
-**Documentation:** COMPLETE  
-**Docker:** READY  
-**Ready for Submission:** YES
-
-Last Updated: 24 April 2026
