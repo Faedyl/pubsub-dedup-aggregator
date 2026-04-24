@@ -39,14 +39,6 @@ UTS/
 │   ├── test_api.py
 │   ├── test_performance.py
 │   └── test_persistence.py
-├── docs/                   # Semua dokumentasi
-│   ├── REPORT.md           # Laporan teori + implementasi
-│   ├── DEMO_SCRIPT.md      # Script video demo
-│   ├── DESIGN.md           # Detail design document
-│   ├── UTS.md              # Soal UTS (referensi)
-│   └── archive/            # File lama (tidak dipakai)
-├── latex/                  # LaTeX sources + report.pdf
-└── reference/              # PDF buku referensi
 ```
 
 ### Teknologi
