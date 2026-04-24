@@ -1,0 +1,47 @@
+version: "3.9"
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  aggregator_data:
+
+services:
+
+  aggregator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aggregator
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_PATH=/app/data/dedup.db
+      - LOG_LEVEL=INFO
+    volumes:
+      - aggregator_data:/app/data
+    networks:
+      - internal
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+  publisher:
+    build:
+      context: ./publisher
+      dockerfile: Dockerfile
+    container_name: publisher
+    environment:
+      - AGGREGATOR_URL=http://aggregator:8080
+    networks:
+      - internal
+    depends_on:
+      aggregator:
+        condition: service_healthy
+    restart: "no"
