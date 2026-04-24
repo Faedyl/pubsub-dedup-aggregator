@@ -4,9 +4,8 @@
 ### Deskripsi
 Layanan pub-sub log aggregator yang dapat menerima event dari publisher, memproses melalui consumer yang bersifat idempotent, dan melakukan deduplication terhadap event duplikat. Seluruh komponen berjalan lokal dalam Docker container.
 
-**Status:** ✅ COMPLETE - 35/35 tests passing
 
-### Video Demo (Wajib)
+### Video Demo 
 
 **YouTube:** https://youtu.be/REPLACE_WITH_VIDEO_ID <!-- TODO: ganti dengan link video demo (public, 5–8 menit) -->
 
