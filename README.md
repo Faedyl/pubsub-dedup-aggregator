@@ -7,7 +7,7 @@ Layanan pub-sub log aggregator yang dapat menerima event dari publisher, mempros
 
 ### Video Demo 
 
-**YouTube:** https://youtu.be/REPLACE_WITH_VIDEO_ID <!-- TODO: ganti dengan link video demo (public, 5–8 menit) -->
+**YouTube:** https://youtu.be/gXctSTBTmGw<!-- TODO: ganti dengan link video demo (public, 5–8 menit) -->
 
 Isi video: build & run container, kirim event duplikat (idempotency + dedup), `GET /events` & `GET /stats` before/after, restart container untuk tunjukkan persistence, ringkasan arsitektur.
 
